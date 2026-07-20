@@ -39,9 +39,11 @@ section{padding:96px 0}
 /* HEADER */
 header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.07)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 32px;max-width:1180px;margin:0 auto}
-.logo{display:flex;align-items:center;gap:12px;color:#fff;text-decoration:none}
+.logo{display:flex;align-items:center;gap:13px;color:#fff;text-decoration:none}
 .logo .mark{width:30px;height:30px}
 .logo .name{font-family:var(--corm);font-size:21px;font-weight:600;letter-spacing:.02em}
+.logo .sym-h{height:40px;width:auto;display:block}
+.logo .word-h{height:29px;width:auto;display:block}
 .menu{display:flex;gap:30px;list-style:none}
 .menu a{color:rgba(255,255,255,.82);text-decoration:none;font-size:13.5px;font-weight:500;letter-spacing:.02em;transition:.2s}
 .menu a:hover,.menu a.active{color:var(--gold)}
@@ -113,6 +115,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 .pilar{background:#fff;border:1px solid #ece6d8;border-radius:4px;padding:32px}
 .bg-off .pilar{background:#fff}
 .pilar .sym{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--corm);font-size:22px;color:#fff;margin-bottom:16px;font-weight:600}
+.pilar .emb{width:84px;height:84px;margin-bottom:16px;display:block}
 .pilar h3{font-family:var(--corm);font-size:25px;color:var(--navy);font-weight:600;margin-bottom:6px}
 .pilar p{font-size:14px;color:#55504a;line-height:1.7}
 .ciclo{background:var(--navy);border-radius:6px;padding:46px 40px;color:#fff;margin-top:24px}
@@ -217,6 +220,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 footer{background:#08131f;color:rgba(255,255,255,.6);padding:64px 0 30px;font-size:13.5px}
 footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 footer .name{font-family:var(--corm);font-size:22px;color:#fff;font-weight:600}
+footer .footlogo{height:58px;width:auto;margin-bottom:4px;display:block}
 footer .sign{letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--gold);margin-top:14px;font-weight:600}
 footer h4{color:#fff;font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
 footer ul{list-style:none}
@@ -231,8 +235,12 @@ footer .base .anchor{font-family:var(--corm);font-style:italic;color:rgba(255,25
 .logo{gap:13px;align-items:center}
 .logo .sym-h{height:40px;width:auto;display:block}
 .logo .word-h{height:29px;width:auto;display:block}
-footer .footlogo{height:96px;width:auto;margin-bottom:4px}
+footer .footlogo{height:58px;width:auto;margin-bottom:4px}
 .pilar .emb{width:84px;height:84px;margin-bottom:16px;display:block}
+.inst-list{list-style:none;columns:2;column-gap:44px;margin-top:18px}
+.inst-list li{padding:10px 0;border-bottom:1px solid #e6e0d2;font-size:14.5px;color:var(--graphite);display:flex;gap:10px;break-inside:avoid;line-height:1.5}
+.inst-list li:before{content:"";width:7px;height:7px;background:var(--gold);border-radius:50%;margin-top:7px;flex:none}
+@media(max-width:720px){.inst-list{columns:1}}
 
 </style>
 </head>
@@ -257,11 +265,6 @@ footer .footlogo{height:96px;width:auto;margin-bottom:4px}
     <h1>Crescimento sustentável não é esforço. <em>É governança aplicada.</em></h1>
     <p class="sub">Método autoral brasileiro para empresas de médio e grande porte que cresceram e precisam de governança para continuar crescendo, sem depender do esforço diário do CEO.</p>
     <div class="cta-row"><a class="btn btn-gold" href="contato.html">Fazer diagnóstico</a><a class="btn btn-ghost" href="metodo.html">Conhecer o método</a></div>
-    <div class="scroll-meta">
-      <div><span class="n">25</span><span class="l">anos de vivência executiva</span></div>
-      <div><span class="n">R$ 90 mi</span><span class="l">por mês sob gestão</span></div>
-      <div><span class="n">23</span><span class="l">unidades de negócio</span></div>
-    </div>
   </div>
 </section>
 
@@ -309,6 +312,32 @@ footer .footlogo{height:96px;width:auto;margin-bottom:4px}
       <div class="pilar"><svg class="emb" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gDn" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#EAD07A"/><stop offset=".5" stop-color="#C9A24E"/><stop offset="1" stop-color="#A8843A"/></linearGradient></defs><circle cx="48" cy="48" r="44" fill="none" stroke="url(#gDn)" stroke-width="1.7"/><circle cx="48" cy="48" r="37" fill="none" stroke="url(#gDn)" stroke-width="0.7" opacity="0.5"/><g transform="translate(11,11)"><path d="M37 15 L57 35 L37 60 L17 35 Z" fill="none" stroke="url(#gDn)" stroke-width="2.4" stroke-linejoin="round"/><path d="M17 35 L57 35 M37 15 L28 35 L37 60 M37 15 L46 35 L37 60" fill="none" stroke="url(#gDn)" stroke-width="1.1" opacity="0.9"/></g></svg><h3>Dinheiro</h3><p>A consequência governada. Margem, caixa e previsibilidade.</p></div>
     </div>
     <div style="text-align:center;margin-top:36px"><a class="btn btn-outline" href="metodo.html">Ver o método completo</a></div>
+  </div>
+</section>
+
+<section class="bg-white">
+  <div class="wrap">
+    <div class="shead"><span class="kicker">Visão institucional</span><div class="rule"></div><h2>Mais do que desenvolver líderes, ampliamos a capacidade de organizações e ecossistemas sustentarem crescimento.</h2></div>
+    <p style="font-size:16px;color:#55504a;line-height:1.85;max-width:70ch;margin-bottom:8px">A Inteiramente Rico integra experiência executiva, visão sistêmica, governança, liderança e execução para construir soluções que geram impacto real em empresas e nas pessoas que fazem parte delas. A metodologia nasce de mais de duas décadas de vivência em ambientes empresariais complexos, acompanhando crescimento, expansão, transformação organizacional e desenvolvimento de grandes equipes.</p>
+    <p style="font-size:16px;color:#55504a;line-height:1.85;max-width:70ch;margin-top:20px">Construímos, em parceria com instituições e empresas de referência, estudos, diagnósticos, fóruns e jornadas voltados ao fortalecimento da capacidade organizacional das empresas.</p>
+    <ul class="inst-list">
+      <li>Estudos e diagnósticos setoriais</li>
+      <li>Projetos de maturidade organizacional</li>
+      <li>Fóruns e mesas de líderes</li>
+      <li>Iniciativas para empresas familiares e sucessão</li>
+      <li>Programas voltados à indústria, ao agro e ao cooperativismo</li>
+      <li>Desenvolvimento de indicadores proprietários</li>
+      <li>Projetos de impacto regional</li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-navy">
+  <div class="wrap center">
+    <span class="kicker mute">Parcerias que ampliam impacto</span><div class="rule" style="margin:18px auto"></div>
+    <p style="font-family:var(--corm);font-style:italic;font-size:24px;color:#fff;max-width:52ch;margin:0 auto 28px;line-height:1.5">Acreditamos que grandes transformações não acontecem de forma isolada.</p>
+    <p style="color:rgba(255,255,255,.72);font-weight:300;max-width:60ch;margin:0 auto 32px">Por isso, buscamos construir alianças com empresas, instituições, entidades empresariais, cooperativas, universidades e agentes de desenvolvimento que compartilhem o compromisso de fortalecer organizações e transformar vidas por meio de uma liderança mais consciente, uma governança mais sólida e uma execução mais consistente.</p>
+    <a class="btn btn-gold" href="contato.html">Construir uma parceria</a>
   </div>
 </section>
 
