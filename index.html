@@ -210,6 +210,25 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 .news input{flex:1;min-width:240px;padding:15px 18px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;border-radius:2px;font-family:var(--mont);font-size:14px}
 .news input::placeholder{color:rgba(255,255,255,.5)}
 
+/* NEWSLETTER - formulario HubSpot embutido */
+.hs-newsletter-embed{max-width:480px;margin:0 auto;text-align:left}
+.hs-newsletter-embed .hs-form{display:flex;flex-direction:column;gap:16px}
+.hs-newsletter-embed .hs-form-field{margin:0}
+.hs-newsletter-embed .hs-form-field>label{display:block;color:rgba(255,255,255,.55);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:7px;font-family:var(--mont);font-weight:600}
+.hs-newsletter-embed input[type="text"],.hs-newsletter-embed input[type="email"]{width:100%;box-sizing:border-box;padding:15px 18px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;border-radius:2px;font-family:var(--mont);font-size:14px}
+.hs-newsletter-embed input::placeholder{color:rgba(255,255,255,.5)}
+.hs-newsletter-embed ul.inputs-list{list-style:none;margin:0;padding:0}
+.hs-newsletter-embed .hs-form-booleancheckbox-display{display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.65);font-size:12.5px;line-height:1.6;font-family:var(--mont);font-weight:300}
+.hs-newsletter-embed .hs-form-booleancheckbox-display input{margin-top:3px;flex:none}
+.hs-newsletter-embed .hs-form-booleancheckbox-display span{flex:1}
+.hs-newsletter-embed .hs-button{align-self:flex-start;background:var(--gold);color:#1a1a1a;border:0;padding:15px 30px;border-radius:2px;font-family:var(--mont);font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer}
+.hs-newsletter-embed .hs-button:hover{opacity:.88}
+.hs-newsletter-embed .hs-error-msgs{list-style:none;margin:6px 0 0;padding:0;color:#ffb4b4;font-size:12px}
+.hs-newsletter-embed .hs-error-msgs label{color:#ffb4b4}
+.hs-newsletter-embed .hs_error_rollup{display:none}
+.hs-newsletter-embed .submitted-message{color:#fff;font-family:var(--corm);font-style:italic;font-size:20px;text-align:center}
+@media(max-width:520px){.hs-newsletter-embed{max-width:100%}}
+
 /* FINAL CTA */
 .finalcta{background:linear-gradient(160deg,#102943,#0D1B2A);color:#fff;text-align:center}
 .finalcta h2{font-family:var(--corm);font-size:46px;font-weight:600;max-width:18ch;margin:0 auto 12px;line-height:1.15}
@@ -348,7 +367,15 @@ footer .footlogo{height:58px;width:auto;margin-bottom:4px}
     <span class="kicker mute">Carta executiva</span>
     <h2>Governança aplicada, a cada quinze dias.</h2>
     <p>Uma tese por edição, sem ruído, para quem decide.</p>
-    <form onsubmit="return false"><input type="email" placeholder="Seu melhor e-mail corporativo"><button class="btn btn-gold" type="submit">Assinar</button></form>
+    <div class="hs-newsletter-embed"></div>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+    <script>
+      hbspt.forms.create({
+        portalId: "51550612",
+        formId: "528a93f2-27ef-410b-b472-1069f7054d78",
+        target: ".hs-newsletter-embed"
+      });
+    </script>
   </div>
 </section>
 
