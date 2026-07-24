@@ -93,7 +93,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 @media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}.shead h2{font-size:30px}}
 
 /* SOCIOS (Quem somos) */
-.socios-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:8px}
+.socios-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;max-width:820px;margin:8px auto 0}
 .socio .ph{aspect-ratio:3/4}
 .socio .in{padding:22px 4px 0}
 .socio h3{font-size:24px;color:var(--navy);font-weight:600;margin:0 0 4px}
@@ -271,7 +271,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 footer{background:#08131f;color:rgba(255,255,255,.6);padding:64px 0 30px;font-size:13.5px}
 footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
 footer .name{font-family:var(--corm);font-size:22px;color:#fff;font-weight:600}
-footer .footlogo{height:58px;width:auto;margin-bottom:26px;display:block}
+footer .footlogo{height:58px;width:auto;margin-bottom:78px;display:block}
 
 /* INSTITUTIONAL LIST (Parcerias) */
 .inst-list{list-style:none;columns:2;column-gap:44px;margin-top:18px}
