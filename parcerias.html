@@ -45,14 +45,27 @@
   <div class="rule" style="margin:0 auto 18px"></div>
   <h2>Vamos construir <em>juntos?</em></h2>
   <p>Comece por uma conversa. Vamos entender onde uma parceria faz sentido.</p>
-  <div class="hs-newsletter-embed"></div>
+  <a class="btn btn-gold" href="#" onclick="hsModal('open','modal-parceria');return false">Construir uma parceria</a>
+
+  <div class="hs-modal-overlay" id="modal-parceria">
+    <div class="hs-modal">
+      <button class="close" onclick="hsModal('close','modal-parceria')" aria-label="Fechar">&times;</button>
+      <span class="kicker">Parcerias</span>
+      <h3>Vamos construir juntos?</h3>
+      <p class="desc">Conte um pouco sobre a parceria que você imagina. Nosso time entra em contato para dar sequência.</p>
+      <div class="hs-form-light hs-embed-target"></div>
+    </div>
+  </div>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <script>
     hbspt.forms.create({
       portalId: "51550612",
       formId: "726dddc4-27d9-4969-b9e7-0241f8fc1084",
-      target: ".hs-newsletter-embed"
+      target: "#modal-parceria .hs-embed-target"
     });
+    function hsModal(action,id){var m=document.getElementById(id);if(action==='open'){m.classList.add('open');document.body.style.overflow='hidden';}else{m.classList.remove('open');document.body.style.overflow='';}}
+    document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('hs-modal-overlay'))hsModal('close',e.target.id);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.hs-modal-overlay.open').forEach(function(o){hsModal('close',o.id);});});
   </script>
 </div></section>
 

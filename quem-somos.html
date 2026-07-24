@@ -54,14 +54,27 @@
     <span class="kicker">A obra</span><div class="rule"></div>
     <h2 style="font-size:36px;color:var(--navy);font-weight:600">O livro que funda o método</h2>
     <p style="font-size:17px;color:var(--graphite);line-height:1.85;max-width:46ch">Inteiramente Rico, o código da liderança forte e do crescimento empresarial. Obra autoral em desenvolvimento, com vocabulário proprietário e tese editorial unificada, que fixa a metodologia e dá lastro durável à autoridade da marca.</p>
-    <div class="hs-form-light hs-book-embed"></div>
+    <a class="btn btn-outline" href="#" style="margin-top:8px" onclick="hsModal('open','modal-livro');return false">Entrar na lista de interesse</a>
+
+    <div class="hs-modal-overlay" id="modal-livro">
+      <div class="hs-modal">
+        <button class="close" onclick="hsModal('close','modal-livro')" aria-label="Fechar">&times;</button>
+        <span class="kicker">A obra</span>
+        <h3>Entre na lista de espera do livro</h3>
+        <p class="desc">Inteiramente Rico, o código da liderança forte e do crescimento empresarial. Avise-me quando o livro for lançado.</p>
+        <div class="hs-form-light hs-embed-target"></div>
+      </div>
+    </div>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
     <script>
       hbspt.forms.create({
         portalId: "51550612",
         formId: "2f2fe7f7-c558-4ffc-a9ea-9f481b085929",
-        target: ".hs-book-embed"
+        target: "#modal-livro .hs-embed-target"
       });
+      function hsModal(action,id){var m=document.getElementById(id);if(action==='open'){m.classList.add('open');document.body.style.overflow='hidden';}else{m.classList.remove('open');document.body.style.overflow='';}}
+      document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('hs-modal-overlay'))hsModal('close',e.target.id);});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.hs-modal-overlay.open').forEach(function(o){hsModal('close',o.id);});});
     </script>
   </div>
 </div></section>

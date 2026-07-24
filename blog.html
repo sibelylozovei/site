@@ -49,14 +49,27 @@
   <span class="kicker mute">Carta executiva</span>
   <h2>Receba a próxima tese antes de todos.</h2>
   <p>Quinzenal, sem ruído, com indicações curadas. Conteúdo que não vai para o público geral.</p>
-  <div class="hs-newsletter-embed"></div>
+  <a class="btn btn-gold" href="#" onclick="hsModal('open','modal-newsletter');return false">Quero receber a carta executiva</a>
+
+  <div class="hs-modal-overlay" id="modal-newsletter">
+    <div class="hs-modal">
+      <button class="close" onclick="hsModal('close','modal-newsletter')" aria-label="Fechar">&times;</button>
+      <span class="kicker">Carta executiva</span>
+      <h3>Receba a próxima tese antes de todos.</h3>
+      <p class="desc">Quinzenal, sem ruído, com indicações curadas. Conteúdo que não vai para o público geral.</p>
+      <div class="hs-form-light hs-embed-target"></div>
+    </div>
+  </div>
   <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
   <script>
     hbspt.forms.create({
       portalId: "51550612",
       formId: "528a93f2-27ef-410b-b472-1069f7054d78",
-      target: ".hs-newsletter-embed"
+      target: "#modal-newsletter .hs-embed-target"
     });
+    function hsModal(action,id){var m=document.getElementById(id);if(action==='open'){m.classList.add('open');document.body.style.overflow='hidden';}else{m.classList.remove('open');document.body.style.overflow='';}}
+    document.addEventListener('click',function(e){if(e.target.classList&&e.target.classList.contains('hs-modal-overlay'))hsModal('close',e.target.id);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')document.querySelectorAll('.hs-modal-overlay.open').forEach(function(o){hsModal('close',o.id);});});
   </script>
 </div></section>
 
