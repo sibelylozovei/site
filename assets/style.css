@@ -250,6 +250,17 @@ header{position:sticky;top:0;z-index:50;background:rgba(13,27,42,.92);backdrop-f
 .hs-form-light .hs_error_rollup{display:none}
 .hs-form-light .submitted-message{color:var(--navy);font-family:var(--corm);font-style:italic;font-size:18px}
 
+/* Modal de formulário (popup) */
+.hs-modal-overlay{display:none;position:fixed;inset:0;background:rgba(8,19,31,.72);z-index:200;align-items:center;justify-content:center;padding:24px}
+.hs-modal-overlay.open{display:flex}
+.hs-modal{background:#fff;border-radius:6px;max-width:480px;width:100%;max-height:88vh;overflow-y:auto;padding:40px 36px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35);text-align:left}
+.hs-modal .close{position:absolute;top:14px;right:16px;background:none;border:0;font-size:24px;line-height:1;color:#9a9080;cursor:pointer;padding:8px}
+.hs-modal .close:hover{color:var(--navy)}
+.hs-modal .kicker{display:block;margin-bottom:8px}
+.hs-modal h3{font-family:var(--corm);font-size:26px;color:var(--navy);font-weight:600;margin-bottom:10px;line-height:1.25}
+.hs-modal p.desc{font-size:14.5px;color:#55504a;margin-bottom:22px;line-height:1.6}
+@media(max-width:520px){.hs-modal{padding:30px 22px}}
+
 /* FINAL CTA */
 .finalcta{background:linear-gradient(160deg,#102943,#0D1B2A);color:#fff;text-align:center}
 .finalcta h2{font-family:var(--corm);font-size:46px;font-weight:600;max-width:18ch;margin:0 auto 12px;line-height:1.15}
