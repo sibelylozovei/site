@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQP3HE8J5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PHQP3HE8J5');
+</script>
+<script>
+/* Origem do lead: lida do parâmetro ?origem= (presencial/online) vindo do UTM
+   do anúncio e guardada no navegador para uso no restante do funil. */
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var origem = params.get('origem');
+  if(origem === 'presencial' || origem === 'online'){
+    sessionStorage.setItem('iir_origem', origem);
+  }
+})();
+</script>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-diagnóstico IIR — Inteiramente Rico</title>
+<meta name="description" content="Descubra em poucos minutos em qual degrau da escada de governança sua empresa está e qual o próximo passo para crescer com estrutura.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inteiramente Rico">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Pré-diagnóstico IIR — Inteiramente Rico">
+<meta property="og:description" content="Descubra em poucos minutos em qual degrau da escada de governança sua empresa está e qual o próximo passo para crescer com estrutura.">
+<meta property="og:url" content="https://inteiramenterico.com.br/pre-diagnostico.html">
+<meta property="og:image" content="https://inteiramenterico.com.br/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pré-diagnóstico IIR — Inteiramente Rico">
+<meta name="twitter:description" content="Descubra em poucos minutos em qual degrau da escada de governança sua empresa está e qual o próximo passo para crescer com estrutura.">
+<meta name="twitter:image" content="https://inteiramenterico.com.br/assets/og/og-default.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=6">
+</head>
+<body>
+<header><div class="nav">
+  <a class="logo" href="index.html"><img class="sym-h" src="assets/logos/symbol-gold.png" alt="Símbolo Inteiramente Rico"><img class="word-h" src="assets/logos/wordmark-white.png" alt="Inteiramente Rico"></a>
+  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="this.classList.toggle('active');this.setAttribute('aria-expanded', this.classList.contains('active'));document.querySelector('.menu').classList.toggle('open')"><span></span><span></span><span></span></button>
+  <ul class="menu"><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul>
+  <a class="btn btn-gold" href="pre-diagnostico.html">Fazer diagnóstico</a>
+</div></header>
+
+<section class="phero"><div class="wrap">
+  <span class="kicker">Pré-diagnóstico gratuito</span>
+  <h1>Em qual degrau <em>a sua empresa está?</em></h1>
+  <p>12 perguntas, 3 minutos. Você recebe uma leitura inicial do seu nível de maturidade em governança e de como está cada um dos três pilares do método: Luz, Amor e Dinheiro.</p>
+</div></section>
+
+<section class="bg-white"><div class="wrap" style="max-width:760px">
+
+  <!-- QUIZ -->
+  <div id="quiz">
+    <div class="qprogress"><div class="qprogress-fill" id="qprogress-fill"></div></div>
+    <p id="qprogress-label" style="font-size:12.5px;color:#9a9080;letter-spacing:.04em;margin:10px 0 34px">0 de 12 respondidas</p>
+
+    <div id="qlist"></div>
+
+    <p id="qwarn" style="display:none;color:#c23a3a;font-size:13.5px;margin:8px 0 18px">Responda todas as perguntas para ver o seu resultado.</p>
+    <button class="btn btn-navy" id="btn-ver-resultado" type="button" style="width:100%">Ver meu resultado</button>
+  </div>
+
+  <!-- LEAD GATE -->
+  <div id="leadgate" style="display:none">
+    <div class="shead center" style="margin:0 auto 30px">
+      <span class="kicker">Seu diagnóstico está pronto</span><div class="rule"></div>
+      <h2 style="font-size:30px">Para onde enviamos o resultado?</h2>
+      <p style="color:#55504a;max-width:48ch;margin:14px auto 0">Preencha os campos abaixo para ver, agora na tela, o seu nível de maturidade e a leitura dos três pilares. Você também recebe uma cópia por e-mail.</p>
+    </div>
+    <form class="form" id="hs-lead-form" onsubmit="return false">
+      <div class="field"><label>Nome</label><input type="text" id="lead-nome" placeholder="Seu nome" required></div>
+      <div class="row2">
+        <div class="field"><label>Empresa</label><input type="text" id="lead-empresa" placeholder="Nome da empresa" required></div>
+        <div class="field"><label>WhatsApp</label><input type="tel" id="lead-whatsapp" placeholder="(00) 00000-0000"></div>
+      </div>
+      <div class="field"><label>E-mail corporativo</label><input type="email" id="lead-email" placeholder="voce@empresa.com.br" required></div>
+      <button class="btn btn-gold" type="button" id="btn-ver-diagnostico" style="width:100%">Ver meu diagnóstico</button>
+      <p style="font-size:12px;color:#9a9080;margin-top:14px;text-align:center">Usamos seus dados apenas para enviar o resultado e, se fizer sentido, propor os próximos passos.</p>
+    </form>
+    <!-- Formulário HubSpot embutido (captura o lead na base de contatos) -->
+    <div id="hs-embed-target" style="display:none"></div>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result" style="display:none">
+    <div class="shead center" style="margin:0 auto 10px"><span class="kicker">Seu resultado</span><div class="rule"></div><h2 id="r-nivel-titulo" style="font-size:34px"></h2></div>
+    <p id="r-nivel-texto" style="text-align:center;color:#55504a;max-width:56ch;margin:0 auto 40px;font-size:15.5px;line-height:1.7"></p>
+
+    <div style="text-align:center;margin-bottom:44px">
+      <span class="iir-score" id="r-score">0</span>
+      <span style="display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9a9080;margin-top:6px">Índice Inteiramente Rico (IIR)</span>
+    </div>
+
+    <h4 style="font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:18px;text-align:center">Leitura por pilar</h4>
+    <div class="pilarbars">
+      <div class="pilarbar">
+        <div class="pb-head"><span>Luz</span><span id="pb-luz-n">0</span></div>
+        <div class="pb-track"><div class="pb-fill pb-luz" id="pb-luz-fill"></div></div>
+        <p id="pb-luz-txt"></p>
+      </div>
+      <div class="pilarbar">
+        <div class="pb-head"><span>Amor</span><span id="pb-amor-n">0</span></div>
+        <div class="pb-track"><div class="pb-fill pb-amor" id="pb-amor-fill"></div></div>
+        <p id="pb-amor-txt"></p>
+      </div>
+      <div class="pilarbar">
+        <div class="pb-head"><span>Dinheiro</span><span id="pb-dinheiro-n">0</span></div>
+        <div class="pb-track"><div class="pb-fill pb-dinheiro" id="pb-dinheiro-fill"></div></div>
+        <p id="pb-dinheiro-txt"></p>
+      </div>
+    </div>
+
+    <div class="finalcta" style="background:var(--offwhite);color:var(--graphite);border-radius:6px;padding:56px 40px;margin-top:56px;text-align:center">
+      <div class="rule" style="margin:0 auto 18px"></div>
+      <h2 style="color:var(--navy);font-size:30px">Isto é uma fotografia inicial.</h2>
+      <p style="color:#55504a">O Diagnóstico Completo aprofunda cada área, evidencia os gargalos e entrega um plano de 90 dias. Vamos conversar sobre o seu resultado?</p>
+      <a class="btn btn-gold" href="contato.html" id="cta-agendar">Agendar conversa</a>
+    </div>
+  </div>
+
+</div></section>
+
+<footer><div class="wrap">
+  <div class="grid">
+    <div><img class="footlogo" src="assets/logos/logo-footer.png" alt="Inteiramente Rico"><div class="sign">Governança · Liderança · Resultado</div><p style="margin-top:16px;max-width:34ch">A casa intelectual brasileira do método Governar para Crescer.</p></div>
+    <div><h4>Navegação</h4><ul><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul></div>
+    <div><h4>Contato</h4><ul><li><a href="mailto:contato@inteiramenterico.com.br">contato@inteiramenterico.com.br</a></li><li><a href="https://wa.me/554187390442" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/sibely-lozovei-28680238/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/inteiramente.rico?igsh=aGJjZnhkdGx3Zm51&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="pre-diagnostico.html">Fazer diagnóstico</a></li><li><a href="politica-privacidade.html">Política de Privacidade</a></li></ul></div>
+  </div>
+  <div class="base"><span>© 2026 Inteiramente Rico. Todos os direitos reservados.</span><span class="anchor">Empresa bem governada é, de fato, Inteiramente Rica.</span></div>
+</div></footer>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/* =====================================================================
+   PRÉ-DIAGNÓSTICO IIR — 12 perguntas, marcação por área + pilar
+   Faixas oficiais do IIR (Arquitetura_Inteiramente_Rico_v2, Adendo XVIII):
+   0-20 Nível 0 UTI · 21-40 Nível 1 Sobrevivência · 41-60 Nível 2 Estabilidade
+   61-80 Nível 3 Crescimento · 81-90 Nível 4 Excelência · 91-100 Nível 5 Liderança de Mercado
+   ===================================================================== */
+const QUESTOES = [
+  {area:'Estratégia', pilar:'luz', texto:'Sua empresa tem missão, visão e valores formalizados e conhecidos por todo o time?', prop:'q1_missao_visao_valores'},
+  {area:'Estratégia', pilar:'luz', texto:'A liderança comunica claramente onde a empresa quer chegar?', prop:'q2_direcao_comunicada'},
+  {area:'Estratégia', pilar:'amor', texto:'Existe uma cadência definida de revisão da estratégia (mensal ou trimestral)?', prop:'q3_cadencia_revisao_estrategia'},
+  {area:'Marketing & Vendas', pilar:'amor', texto:'O processo comercial é estruturado, com responsáveis e etapas definidas?', prop:'q4_processo_comercial_estruturado'},
+  {area:'Marketing & Vendas', pilar:'dinheiro', texto:'Você mede conversão e ticket médio com regularidade?', prop:'q5_mede_conversao_ticket'},
+  {area:'Finanças', pilar:'dinheiro', texto:'Existe controle de fluxo de caixa atualizado e confiável?', prop:'q6_controle_fluxo_caixa'},
+  {area:'Finanças', pilar:'dinheiro', texto:'A margem operacional é monitorada por produto, linha ou unidade?', prop:'q7_margem_operacional_monitorada'},
+  {area:'Finanças', pilar:'luz', texto:'Existe orçamento anual com acompanhamento real das metas?', prop:'q8_orcamento_anual_acompanhamento'},
+  {area:'Operações', pilar:'amor', texto:'A operação funciona sem depender diretamente do dono ou fundador?', prop:'q9_operacao_independe_fundador'},
+  {area:'Operações', pilar:'dinheiro', texto:'A empresa usa tecnologia ou automação para reduzir retrabalho?', prop:'q10_tecnologia_reduz_retrabalho'},
+  {area:'Liderança', pilar:'amor', texto:'Existem líderes internos formados para sustentar o crescimento?', prop:'q11_lideres_internos_formados'},
+  {area:'Liderança', pilar:'amor', texto:'Existe uma cadência real de feedback entre liderança e equipe?', prop:'q12_cadencia_feedback'}
+];
+
+const VALOR = {sim:100, parcial:50, nao:0};
+const LABEL_RESPOSTA = {sim:'Sim', parcial:'Parcialmente', nao:'Não'};
+const respostas = new Array(QUESTOES.length).fill(null);
+
+const qlist = document.getElementById('qlist');
+QUESTOES.forEach((q, i) => {
+  const card = document.createElement('div');
+  card.className = 'qcard';
+  card.id = 'qcard-' + i;
+  card.innerHTML =
+    '<span class="qtag">' + q.area + '</span>' +
+    '<p class="qtext">' + q.texto + '</p>' +
+    '<div class="qopts">' +
+      '<button type="button" class="qopt" data-i="' + i + '" data-v="sim">Sim</button>' +
+      '<button type="button" class="qopt" data-i="' + i + '" data-v="parcial">Parcialmente</button>' +
+      '<button type="button" class="qopt" data-i="' + i + '" data-v="nao">Não</button>' +
+    '</div>';
+  qlist.appendChild(card);
+});
+
+qlist.addEventListener('click', function(e){
+  const btn = e.target.closest('.qopt');
+  if(!btn) return;
+  const i = parseInt(btn.dataset.i, 10);
+  respostas[i] = btn.dataset.v;
+  const card = document.getElementById('qcard-' + i);
+  card.querySelectorAll('.qopt').forEach(o => o.classList.remove('on'));
+  btn.classList.add('on');
+  atualizarProgresso();
+});
+
+function atualizarProgresso(){
+  const n = respostas.filter(r => r !== null).length;
+  document.getElementById('qprogress-fill').style.width = (n / QUESTOES.length * 100) + '%';
+  document.getElementById('qprogress-label').textContent = n + ' de ' + QUESTOES.length + ' respondidas';
+}
+
+let RESULTADO = null;
+
+document.getElementById('btn-ver-resultado').addEventListener('click', function(){
+  const faltando = respostas.findIndex(r => r === null);
+  if(faltando !== -1){
+    document.getElementById('qwarn').style.display = 'block';
+    document.getElementById('qcard-' + faltando).scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  RESULTADO = calcularResultado();
+  document.getElementById('quiz').style.display = 'none';
+  document.getElementById('leadgate').style.display = 'block';
+  window.scrollTo({top: document.getElementById('leadgate').offsetTop - 100, behavior:'smooth'});
+});
+
+function calcularResultado(){
+  const porPilar = {luz:[], amor:[], dinheiro:[]};
+  let soma = 0;
+  QUESTOES.forEach((q, i) => {
+    const v = VALOR[respostas[i]];
+    soma += v;
+    porPilar[q.pilar].push(v);
+  });
+  const media = arr => Math.round(arr.reduce((a,b) => a+b, 0) / arr.length);
+  const score = Math.round(soma / QUESTOES.length);
+  return {
+    score: score,
+    luz: media(porPilar.luz),
+    amor: media(porPilar.amor),
+    dinheiro: media(porPilar.dinheiro)
+  };
+}
+
+function nivelDe(score){
+  if(score <= 20) return {n:'Nível 0 — UTI', t:'Risco imediato. Decisões no impulso, caixa não controlado, resultado imprevisível. A prioridade é estabilizar antes de qualquer plano de crescimento.'};
+  if(score <= 40) return {n:'Nível 1 — Sobrevivência', t:'A empresa reage em vez de conduzir. Existem tentativas de organização, mas ainda sem cadência nem consistência.'};
+  if(score <= 60) return {n:'Nível 2 — Estabilidade', t:'Os alicerces básicos existem. Chegou a hora de transformar rotina em sistema, e sistema em crescimento.'};
+  if(score <= 80) return {n:'Nível 3 — Crescimento', t:'A empresa já governa o essencial e está pronta para acelerar com mais estrutura estratégica e de liderança.'};
+  if(score <= 90) return {n:'Nível 4 — Excelência', t:'Maturidade alta nas cinco áreas-chave. O desafio agora é sustentar o padrão em escala, sem depender de heróis.'};
+  return {n:'Nível 5 — Liderança de Mercado', t:'Governança plena. A empresa se tornou referência, e o próximo passo é perpetuar o padrão através de sucessão e conselho.'};
+}
+
+function leituraPilar(pilar, score){
+  const textos = {
+    luz: {gargalo:'Falta clareza de direção: decisões acontecem sem rumo comum.', consolidacao:'A direção existe, mas ainda não está totalmente internalizada pelo time.', forca:'Direção clara e conhecida, um dos pontos fortes da empresa hoje.'},
+    amor: {gargalo:'Liderança e cultura ainda não sustentam a operação, é o gargalo prioritário.', consolidacao:'Liderança em desenvolvimento, cultura ainda inconsistente.', forca:'Liderança forte e cultura consistente, ponto de apoio real do crescimento.'},
+    dinheiro: {gargalo:'Resultado não é medido nem controlado com consistência.', consolidacao:'Indicadores existem, mas ainda não orientam a decisão de forma sistemática.', forca:'Consequência bem medida e usada para decidir, um dos pontos fortes.'}
+  };
+  if(score < 50) return textos[pilar].gargalo;
+  if(score <= 75) return textos[pilar].consolidacao;
+  return textos[pilar].forca;
+}
+
+function mostrarResultado(){
+  const r = RESULTADO;
+  const nivel = nivelDe(r.score);
+  document.getElementById('r-nivel-titulo').textContent = nivel.n;
+  document.getElementById('r-nivel-texto').textContent = nivel.t;
+  document.getElementById('r-score').textContent = r.score;
+
+  ['luz','amor','dinheiro'].forEach(p => {
+    document.getElementById('pb-' + p + '-n').textContent = r[p];
+    document.getElementById('pb-' + p + '-fill').style.width = r[p] + '%';
+    document.getElementById('pb-' + p + '-txt').textContent = leituraPilar(p, r[p]);
+  });
+
+  document.getElementById('leadgate').style.display = 'none';
+  document.getElementById('result').style.display = 'block';
+  window.scrollTo({top: document.getElementById('result').offsetTop - 100, behavior:'smooth'});
+
+  // Repassa a origem para o link de agendar conversa, para o formato certo
+  // (presencial em Curitiba x online) ser perguntado só quando fizer sentido.
+  var ctaAgendar = document.getElementById('cta-agendar');
+  if(ctaAgendar){
+    var origemSalva = sessionStorage.getItem('iir_origem');
+    ctaAgendar.href = origemSalva ? ('contato.html?origem=' + origemSalva) : 'contato.html';
+  }
+}
+
+/* ---------------------------------------------------------------------
+   Integração HubSpot
+   Portal: 51550612 (mesmo portal já usado no restante do site)
+   Formulário "Pré-diagnóstico IIR" (publicado), com os campos:
+   firstname, company, hs_whatsapp_phone_number, email, e campos ocultos
+   mapeados às propriedades de contato personalizadas:
+     - pontuacao_iir_prediagnostico (número, 0-100)
+     - nivel_iir_prediagnostico (texto de linha única)
+     - q1_missao_visao_valores ... q12_cadencia_feedback (dropdown
+       Sim/Parcialmente/Não, uma propriedade por pergunta do quiz)
+   "Sempre criar um contato para novos endereços de e-mail" está ativado
+   nas opções do formulário, então todo envio vira um contato no CRM.
+--------------------------------------------------------------------- */
+const HUBSPOT_PORTAL_ID = "51550612";
+const HUBSPOT_FORM_ID = "9c2d424e-9791-4375-9526-4c6e66b52e65";
+let hsFormPronto = false;
+
+if(window.hbspt){
+  hbspt.forms.create({
+    portalId: HUBSPOT_PORTAL_ID,
+    formId: HUBSPOT_FORM_ID,
+    region: "na1",
+    target: "#hs-embed-target",
+    onFormReady: function($form){
+      hsFormPronto = true;
+    },
+    onFormSubmitted: function(){
+      mostrarResultado();
+    }
+  });
+}
+
+document.getElementById('btn-ver-diagnostico').addEventListener('click', function(){
+  const nome = document.getElementById('lead-nome').value.trim();
+  const empresa = document.getElementById('lead-empresa').value.trim();
+  const email = document.getElementById('lead-email').value.trim();
+  if(!nome || !empresa || !email){
+    alert('Preencha nome, empresa e e-mail para continuar.');
+    return;
+  }
+
+  const whatsapp = document.getElementById('lead-whatsapp').value.trim();
+  // Guarda os dados já coletados para não pedir de novo em contato.html.
+  sessionStorage.setItem('iir_lead', JSON.stringify({nome:nome, empresa:empresa, email:email, whatsapp:whatsapp}));
+
+  if(hsFormPronto){
+    const iframe = document.querySelector('#hs-embed-target iframe');
+    if(iframe){
+      try{
+        const doc = iframe.contentDocument;
+        const origemSalva = sessionStorage.getItem('iir_origem');
+        const origemLabel = origemSalva === 'presencial' ? 'Presencial' : (origemSalva === 'online' ? 'Online' : '');
+        const map = {firstname:nome, company:empresa, email:email, hs_whatsapp_phone_number:whatsapp, pontuacao_iir_prediagnostico:String(RESULTADO.score), nivel_iir_prediagnostico:nivelDe(RESULTADO.score).n, origem_do_lead:origemLabel};
+        QUESTOES.forEach(function(q, i){
+          map[q.prop] = LABEL_RESPOSTA[respostas[i]];
+        });
+        Object.keys(map).forEach(function(campo){
+          const el = doc.querySelector('[name="' + campo + '"]');
+          if(el){ el.value = map[campo]; el.dispatchEvent(new Event('input', {bubbles:true})); }
+        });
+        const btn = doc.querySelector('input[type="submit"], button[type="submit"]');
+        if(btn) btn.click();
+        return;
+      }catch(err){ /* segue para o fallback abaixo */ }
+    }
+  }
+  // Fallback: sem formulário HubSpot configurado ainda, mostra o resultado direto.
+  mostrarResultado();
+});
+</script>
+</body>
+</html>

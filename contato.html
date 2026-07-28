@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQP3HE8J5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PHQP3HE8J5');
+</script>
+<script>
+/* Origem do lead: lida do parâmetro ?origem= (presencial/online) vindo do UTM
+   do anúncio, ou do que já foi salvo no pré-diagnóstico. */
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var origem = params.get('origem');
+  if(origem === 'presencial' || origem === 'online'){
+    sessionStorage.setItem('iir_origem', origem);
+  }
+})();
+</script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contato e diagnóstico — Inteiramente Rico</title>
+<meta name="description" content="Agende uma conversa de diagnóstico com a Inteiramente Rico, não um pitch de vendas, para entender o estágio de governança da sua empresa.">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Inteiramente Rico">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Contato e diagnóstico — Inteiramente Rico">
+<meta property="og:description" content="Agende uma conversa de diagnóstico com a Inteiramente Rico, não um pitch de vendas, para entender o estágio de governança da sua empresa.">
+<meta property="og:url" content="https://inteiramenterico.com.br/contato.html">
+<meta property="og:image" content="https://inteiramenterico.com.br/assets/og/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contato e diagnóstico — Inteiramente Rico">
+<meta name="twitter:description" content="Agende uma conversa de diagnóstico com a Inteiramente Rico, não um pitch de vendas, para entender o estágio de governança da sua empresa.">
+<meta name="twitter:image" content="https://inteiramenterico.com.br/assets/og/og-default.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=2">
+<link rel="stylesheet" href="assets/style.css?v=6">
 </head>
 <body>
 <header><div class="nav">
   <a class="logo" href="index.html"><img class="sym-h" src="assets/logos/symbol-gold.png" alt="Símbolo Inteiramente Rico"><img class="word-h" src="assets/logos/wordmark-white.png" alt="Inteiramente Rico"></a>
+  <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="this.classList.toggle('active');this.setAttribute('aria-expanded', this.classList.contains('active'));document.querySelector('.menu').classList.toggle('open')"><span></span><span></span><span></span></button>
   <ul class="menu"><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul>
-  <a class="btn btn-gold" href="#form">Fazer diagnóstico</a>
+  <a class="btn btn-gold" href="pre-diagnostico.html">Fazer diagnóstico</a>
 </div></header>
 
 <section class="phero"><div class="wrap">
@@ -37,24 +75,38 @@
   </div>
 
   <form class="form" id="form" onsubmit="return false">
-    <div class="field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
+    <div class="field" id="wrap-nome"><label>Nome</label><input type="text" id="ct-nome" placeholder="Seu nome"></div>
     <div class="row2">
-      <div class="field"><label>Empresa</label><input type="text" placeholder="Nome da empresa"></div>
-      <div class="field"><label>Cargo</label><input type="text" placeholder="Seu cargo"></div>
+      <div class="field" id="wrap-empresa"><label>Empresa</label><input type="text" id="ct-empresa" placeholder="Nome da empresa"></div>
+      <div class="field"><label>Cargo</label><input type="text" id="ct-cargo" placeholder="Seu cargo"></div>
+    </div>
+    <div class="field" id="wrap-formato" style="display:none">
+      <label>Prefere que o diagnóstico seja</label>
+      <select id="ct-formato">
+        <option value="Presencial">Presencial, em Curitiba</option>
+        <option value="Online">Online</option>
+      </select>
     </div>
     <div class="row2">
       <div class="field"><label>Setor</label>
-        <select><option>Agro e cooperativas</option><option>Alimentação e proteína</option><option>Indústria</option><option>Varejo e distribuição</option><option>Saúde estética premium</option><option>Outro</option></select>
+        <select id="ct-setor"><option>Agro e cooperativas</option><option>Alimentação e proteína</option><option>Indústria</option><option>Varejo e distribuição</option><option>Saúde estética premium</option><option>Outro</option></select>
       </div>
       <div class="field"><label>Faturamento anual</label>
-        <select><option>R$ 30 mi a R$ 100 mi</option><option>R$ 100 mi a R$ 500 mi</option><option>R$ 500 mi a R$ 1 bi</option><option>Acima de R$ 1 bi</option></select>
+        <select id="ct-faturamento"><option>R$ 30 mi a R$ 100 mi</option><option>R$ 100 mi a R$ 500 mi</option><option>R$ 500 mi a R$ 1 bi</option><option>Acima de R$ 1 bi</option></select>
       </div>
     </div>
-    <div class="field"><label>E-mail corporativo</label><input type="email" placeholder="voce@empresa.com.br"></div>
-    <div class="field"><label>Qual o principal desafio hoje?</label><textarea placeholder="Em poucas linhas, o que mais te incomoda na gestão hoje."></textarea></div>
-    <button class="btn btn-gold" type="submit" style="width:100%">Agendar a conversa</button>
+    <div class="field" id="wrap-email"><label>E-mail corporativo</label><input type="email" id="ct-email" placeholder="voce@empresa.com.br"></div>
+    <div class="field"><label>Qual o principal desafio hoje?</label><textarea id="ct-desafio" placeholder="Em poucas linhas, o que mais te incomoda na gestão hoje."></textarea></div>
+    <p id="ct-erro" style="display:none;color:#c23a3a;font-size:13.5px;margin:0 0 14px">Preencha nome, empresa e e-mail para continuar.</p>
+    <button class="btn btn-gold" type="button" id="ct-enviar" style="width:100%">Agendar a conversa</button>
     <p style="font-size:12px;color:#9a9080;margin-top:14px;text-align:center">Resposta em até 24 horas. Tratamento individual desde o primeiro contato.</p>
+    <!-- Formulário HubSpot embutido (captura o lead na base de contatos) -->
+    <div id="hs-embed-target" style="display:none"></div>
   </form>
+  <div id="ct-obrigado" class="form" style="display:none;text-align:center">
+    <h3 style="font-family:var(--corm);color:var(--navy);font-size:26px;margin-bottom:12px">Conversa agendada.</h3>
+    <p style="color:#55504a">Recebemos suas informações. Você tem retorno em até 24 horas para combinar o melhor horário.</p>
+  </div>
 </div></section>
 
 <section class="bg-navy"><div class="wrap center">
@@ -66,9 +118,102 @@
   <div class="grid">
     <div><img class="footlogo" src="assets/logos/logo-footer.png" alt="Inteiramente Rico"><div class="sign">Governança · Liderança · Resultado</div><p style="margin-top:16px;max-width:34ch">A casa intelectual brasileira do método Governar para Crescer.</p></div>
     <div><h4>Navegação</h4><ul><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-    <div><h4>Contato</h4><ul><li><a href="mailto:contato@inteiramenterico.com.br">contato@inteiramenterico.com.br</a></li><li><a href="https://wa.me/554187390442" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/sibely-lozovei-28680238/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/inteiramente.rico?igsh=aGJjZnhkdGx3Zm51&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="#form">Fazer diagnóstico</a></li></ul></div>
+    <div><h4>Contato</h4><ul><li><a href="mailto:contato@inteiramenterico.com.br">contato@inteiramenterico.com.br</a></li><li><a href="https://wa.me/554187390442" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/sibely-lozovei-28680238/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/inteiramente.rico?igsh=aGJjZnhkdGx3Zm51&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="pre-diagnostico.html">Fazer diagnóstico</a></li><li><a href="politica-privacidade.html">Política de Privacidade</a></li></ul></div>
   </div>
   <div class="base"><span>© 2026 Inteiramente Rico. Todos os direitos reservados.</span><span class="anchor">Empresa bem governada é, de fato, Inteiramente Rica.</span></div>
 </div></footer>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+/* ---------------------------------------------------------------------
+   Integração HubSpot — formulário "Agendar conversa — Diagnóstico"
+   Portal: 51550612 (mesmo portal do restante do site)
+   Campos: firstname, company, jobtitle, industry, email,
+   faturamento_anual_diagnostico, principal_desafio_diagnostico,
+   e o campo oculto origem_do_lead (Presencial/Online).
+--------------------------------------------------------------------- */
+const HUBSPOT_PORTAL_ID = "51550612";
+const CONTATO_FORM_ID = "34cf0aa6-ec10-4574-984d-a5379e4e6cef";
+let ctFormPronto = false;
+
+// Se o lead já veio do pré-diagnóstico, não pedimos nome/empresa/e-mail de novo.
+const leadSalvo = (function(){
+  try { return JSON.parse(sessionStorage.getItem('iir_lead') || 'null'); }
+  catch(e){ return null; }
+})();
+
+if(leadSalvo && leadSalvo.email){
+  document.getElementById('wrap-nome').style.display = 'none';
+  document.getElementById('wrap-empresa').style.display = 'none';
+  document.getElementById('wrap-email').style.display = 'none';
+}
+
+// A pergunta de formato (presencial x online) só aparece para quem veio do
+// anúncio presencial (Curitiba e região). Quem vem do anúncio online segue
+// direto como online, sem pergunta extra.
+const origemAtual = sessionStorage.getItem('iir_origem');
+if(origemAtual === 'presencial'){
+  document.getElementById('wrap-formato').style.display = 'block';
+}
+
+if(window.hbspt){
+  hbspt.forms.create({
+    portalId: HUBSPOT_PORTAL_ID,
+    formId: CONTATO_FORM_ID,
+    region: "na1",
+    target: "#hs-embed-target",
+    onFormReady: function($form){
+      ctFormPronto = true;
+    },
+    onFormSubmitted: function(){
+      document.getElementById('form').style.display = 'none';
+      document.getElementById('ct-obrigado').style.display = 'block';
+    }
+  });
+}
+
+document.getElementById('ct-enviar').addEventListener('click', function(){
+  const nome = leadSalvo ? leadSalvo.nome : document.getElementById('ct-nome').value.trim();
+  const empresa = leadSalvo ? leadSalvo.empresa : document.getElementById('ct-empresa').value.trim();
+  const email = leadSalvo ? leadSalvo.email : document.getElementById('ct-email').value.trim();
+  const cargo = document.getElementById('ct-cargo').value.trim();
+  const setor = document.getElementById('ct-setor').value;
+  const faturamento = document.getElementById('ct-faturamento').value;
+  const desafio = document.getElementById('ct-desafio').value.trim();
+
+  if(!nome || !empresa || !email){
+    document.getElementById('ct-erro').style.display = 'block';
+    return;
+  }
+  document.getElementById('ct-erro').style.display = 'none';
+
+  // A resposta da pergunta de formato, quando exibida, sobrescreve a origem
+  // vinda do UTM (a região não significa necessariamente preferência de formato).
+  let origemFinal = origemAtual === 'presencial' ? 'Presencial' : (origemAtual === 'online' ? 'Online' : '');
+  if(document.getElementById('wrap-formato').style.display !== 'none'){
+    origemFinal = document.getElementById('ct-formato').value;
+  }
+
+  if(ctFormPronto){
+    const iframe = document.querySelector('#hs-embed-target iframe');
+    if(iframe){
+      try{
+        const doc = iframe.contentDocument;
+        const map = {firstname:nome, company:empresa, email:email, jobtitle:cargo, industry:setor, faturamento_anual_diagnostico:faturamento, principal_desafio_diagnostico:desafio, origem_do_lead:origemFinal};
+        Object.keys(map).forEach(function(campo){
+          const el = doc.querySelector('[name="' + campo + '"]');
+          if(el){ el.value = map[campo]; el.dispatchEvent(new Event('input', {bubbles:true})); }
+        });
+        const btn = doc.querySelector('input[type="submit"], button[type="submit"]');
+        if(btn) btn.click();
+        return;
+      }catch(err){ /* segue para o fallback abaixo */ }
+    }
+  }
+  // Fallback: sem formulário HubSpot pronto ainda, mostra a confirmação direto.
+  document.getElementById('form').style.display = 'none';
+  document.getElementById('ct-obrigado').style.display = 'block';
+});
+</script>
 </body>
 </html>
