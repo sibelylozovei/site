@@ -2,14 +2,31 @@
 <html lang="pt-BR">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHQP3HE8J5"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K88WCXKRP5"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-PHQP3HE8J5');
+  gtag('config', 'G-K88WCXKRP5');
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '25991419360457815');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=25991419360457815&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <script>
 /* Origem do lead: lida do parâmetro ?origem= (presencial/online) vindo do UTM
    do anúncio e guardada no navegador para uso no restante do funil. */
@@ -307,6 +324,8 @@ if(window.hbspt){
     },
     onFormSubmitted: function(){
       mostrarResultado();
+      // Evento de conversão do Meta Pixel: confirma que o HubSpot aceitou o envio.
+      if(typeof fbq === 'function'){ fbq('track', 'Lead'); }
     }
   });
 }
