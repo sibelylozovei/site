@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <script>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"4926388962e9de3cb92a36549f4e9443"})});</script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K88WCXKRP5"></script>
 <script>
@@ -10,6 +9,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-K88WCXKRP5');
+</script>
+<!-- Rastreamento de clique no WhatsApp (GA4 + Meta Pixel) -->
+<script>
+document.addEventListener('click', function(e){
+  var a = e.target.closest('a[href*="wa.me"]');
+  if(!a) return;
+  if(typeof gtag === 'function'){ gtag('event', 'contact_whatsapp', {method:'whatsapp'}); }
+  if(typeof fbq === 'function'){ fbq('track', 'Contact'); }
+});
 </script>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diagnóstico, mentoria e consultoria — Inteiramente Rico</title>
@@ -36,7 +44,7 @@
 </head>
 <body>
 <header><div class="nav">
-  <a class="logo" href="index.html"><img loading="lazy" class="sym-h" src="assets/logos/symbol-gold.png" alt="Símbolo Inteiramente Rico"><img loading="lazy" class="word-h" src="assets/logos/wordmark-white.png" alt="Inteiramente Rico"></a>
+  <a class="logo" href="index.html"><img class="sym-h" src="assets/logos/symbol-gold.png" alt="Símbolo Inteiramente Rico"><img class="word-h" src="assets/logos/wordmark-white.png" alt="Inteiramente Rico"></a>
   <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" onclick="this.classList.toggle('active');this.setAttribute('aria-expanded', this.classList.contains('active'));document.querySelector('.menu').classList.toggle('open')"><span></span><span></span><span></span></button>
   <ul class="menu"><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a class="active" href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul>
   <a class="btn btn-gold" href="pre-diagnostico.html">Fazer diagnóstico</a>
@@ -68,7 +76,7 @@
 
 <footer><div class="wrap">
   <div class="grid">
-    <div><img loading="lazy" class="footlogo" src="assets/logos/logo-footer.png" alt="Inteiramente Rico"><div class="sign">Governança · Liderança · Resultado</div><p style="margin-top:16px;max-width:34ch">A casa intelectual brasileira do método Governar para Crescer.</p></div>
+    <div><img class="footlogo" src="assets/logos/logo-footer.png" alt="Inteiramente Rico"><div class="sign">Governança · Liderança · Resultado</div><p style="margin-top:16px;max-width:34ch">A casa intelectual brasileira do método Governar para Crescer.</p></div>
     <div><h4>Navegação</h4><ul><li><a href="index.html">Início</a></li><li><a href="quem-somos.html">Quem somos</a></li><li><a href="metodo.html">Método</a></li><li><a href="solucoes.html">Soluções</a></li><li><a href="cases.html">Cases</a></li><li><a href="parcerias.html">Parcerias</a></li><li><a href="blog.html">Blog</a></li></ul></div>
     <div><h4>Contato</h4><ul><li><a href="mailto:contato@inteiramenterico.com.br">contato@inteiramenterico.com.br</a></li><li><a href="https://wa.me/554187390442" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.linkedin.com/in/sibely-lozovei-28680238/" target="_blank" rel="noopener">LinkedIn</a></li><li><a href="https://www.instagram.com/inteiramente.rico?igsh=aGJjZnhkdGx3Zm51&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li><li><a href="pre-diagnostico.html">Fazer diagnóstico</a></li><li><a href="politica-privacidade.html">Política de Privacidade</a></li></ul></div>
   </div>
